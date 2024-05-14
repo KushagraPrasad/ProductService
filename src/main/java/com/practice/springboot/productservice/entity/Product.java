@@ -1,24 +1,27 @@
 package com.practice.springboot.productservice.entity;
 
-import javax.persistence.Entity;
+import java.util.UUID;
+
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
-@Entity
+import org.springframework.data.mongodb.core.mapping.Document;
+
+@Document(collection = "products")
 public class Product {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
-	private long id;
+	private String id;
 	private String productName;
 	private int price;
 
-	public long getId() {
+	public String getId() {
 		return id;
 	}
 
-	public void setId(long id) {
+	public void setId(String id) {
 		this.id = id;
 	}
 
@@ -38,9 +41,9 @@ public class Product {
 		this.price = price;
 	}
 
-	public Product(long id, String productName, int price) {
+	public Product(String id, String productName, int price) {
 		super();
-		this.id = id;
+		this.id = UUID.randomUUID().toString(); // Generating UUID
 		this.productName = productName;
 		this.price = price;
 	}

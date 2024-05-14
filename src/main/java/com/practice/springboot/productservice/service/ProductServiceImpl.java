@@ -32,7 +32,7 @@ public class ProductServiceImpl implements ProductService {
 		}
 	}
 
-	public void delete(long id) throws Exception {
+	public void delete(String id) throws Exception {
 		logger.info("Product deleted.");
 		// productRepository.deleteById(id);
 		try {

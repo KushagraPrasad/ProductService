@@ -2,16 +2,14 @@ package com.practice.springboot.productservice.pojo;
 
 public class ProductDetail {
 
-	private long id;
+	private String id;
 	private String productName;
 	private int price;
 
-	public long getId() {
-		return id;
-	}
-
-	public void setId(long id) {
-		this.id = id;
+	public ProductDetail(String productName, int price) {
+		super();
+		this.productName = productName;
+		this.price = price;
 	}
 
 	public String getProductName() {
@@ -30,26 +28,11 @@ public class ProductDetail {
 		this.price = price;
 	}
 
-	public ProductDetail(long id, String productName, int price) {
-		super();
+	public String getId() {
+		return id;
+	}
+
+	public void setId(String id) {
 		this.id = id;
-		this.productName = productName;
-		this.price = price;
 	}
-
-	public ProductDetail(String productName, int price) {
-		super();
-		this.productName = productName;
-		this.price = price;
-	}
-
-	public ProductDetail() {
-		super();
-	}
-
-	@Override
-	public String toString() {
-		return "ProductDetails [id=" + id + ", productName=" + productName + ", price=" + price + "]";
-	}
-
 }

@@ -4,6 +4,7 @@ import java.util.List;
 import java.util.logging.Logger;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -15,6 +16,7 @@ import com.practice.springboot.productservice.entity.Product;
 import com.practice.springboot.productservice.pojo.ProductDetail;
 import com.practice.springboot.productservice.service.ProductService;
 
+@Component
 @RestController
 @RequestMapping("/api")
 public class ProductServiceController {
@@ -31,7 +33,7 @@ public class ProductServiceController {
 	}
 
 	@RequestMapping(value = "/product/{id}", method = RequestMethod.DELETE)
-	public void deleteProduct(@PathVariable long id) throws Exception {
+	public void deleteProduct(@PathVariable String id) throws Exception {
 		logger.info("Product deleted with the id:" + id);
 		productService.delete(id);
 	}

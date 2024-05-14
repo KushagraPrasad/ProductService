@@ -12,7 +12,7 @@ public interface ProductService {
 
 	public Product create(ProductDetail product) throws Exception;
 
-	public void delete(long id) throws Exception;
+	public void delete(String id) throws Exception;
 
 	public List<Product> showAll() throws Exception;
 }
